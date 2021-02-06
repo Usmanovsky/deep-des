@@ -1,4 +1,9 @@
 # This is the same as filerenamer_test_v3.py
+# This powers des_renamer.py by editing ligpargen files.
+# Run the script using "python3 itpandgro.py ligpargen/*
+# Your directories might be different so set them up accordingly.
+# created by ulab222
+
 from pathlib import Path
 import os, sys, shutil, time, pandas as pd
 
@@ -129,7 +134,7 @@ def filesrenamer(folderpath):
                     print(f"Max charge: {max_charge} at index {max_charge_index} has been changed to {neutralizer}\n")
                     charge_list[max_charge_index] = neutralizer
                 else:
-                    neutralizer = 0
+                    neutralizer = charge_list[max_charge_index]
 
                 print(f"Final net charge: {sum(charge_list)}")
                 sed_neutralizer = round(neutralizer, 4)
